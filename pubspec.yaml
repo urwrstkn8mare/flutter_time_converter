@@ -26,6 +26,10 @@ dependencies:
 
   sliding_up_panel: ^0.3.6
   flutter_slidable: ^0.5.4
+  flutter_statusbarcolor: ^0.2.3
+  flappy_search_bar:
+    git:
+      url: git://github.com/urwrstkn8mare/flappy_search_bar.git
 
 dev_dependencies:
   flutter_test:

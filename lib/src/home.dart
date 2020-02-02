@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_time_converter/src/search/searchPage.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'body/body.dart';
+import 'global_widgets/customPageRoute.dart';
 import 'global_widgets/customFab.dart';
 import 'panel/panel.dart';
+import 'search/searchPage.dart';
 
 class Home extends StatefulWidget {
+  Function changeStatusColour;
+  Home(this.changeStatusColour);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -88,9 +92,12 @@ class _HomeState extends State<Home> {
               icon: Icons.search,
               heroTag: "searchFab",
               onPressed: () {
+                // showSearch(
+                //     context: context, delegate: LocationSearchDelegate());
+
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SearchPage()),
+                  CustomPageRoute(page: SearchPage(widget.changeStatusColour)),
                 );
               },
             ),
